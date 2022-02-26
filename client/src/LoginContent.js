@@ -1,6 +1,12 @@
 import React from 'react'
+import axios from 'axios'
 
 const LoginContent = () => {
+
+    const authFunc = async() => {
+        const fetch = await axios.get('http://localhost:5000/api/google')
+    } 
+
     return (
         <>
             <div className="divider"></div>
