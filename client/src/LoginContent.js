@@ -1,19 +1,19 @@
-import React from 'react'
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const LoginContent = () => {
+    const navigate = useNavigate()
 
-    const authFunc = async() => {
-        const fetch = await axios.get('http://localhost:5000/api/google')
-    } 
+    const authFunc = () => {
+        navigate('http://localhost:5000/api/google')
+    }
 
     return (
         <>
             <div className="divider"></div>
             <div className="section">
-                <a href="/auth/google" className='btn red darken-1'>
+                <button onClick={authFunc} className='btn red darken-1'>
                     <i className='fab fa-google left'>Login with Google</i>
-                </a>
+                </button>
             </div>
         </>
     )
